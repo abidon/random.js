@@ -19,12 +19,12 @@ randomInt = function(options)
 
 /*!
 * @fn randomFloat(options)
-* @brief generate random integers
-* @param options.min the minimum value (default: 0)
-* @param options.max the maximum value (default: 1)
-* @return an integer between the min/max bounds
+* @brief generate random floats
+* @param options.min the minimum value (default: 0.0)
+* @param options.max the maximum value (default: 1.0)
+* @return a float between the min/max bounds
 */
-randomInt = function(options)
+randomFloat = function(options)
 {
 	if (options === undefined || options === null)
 		options = {}
@@ -40,10 +40,10 @@ randomInt = function(options)
  * @fn randomString(options)
  * @brief generate random strings
  * @param options.length the length of the string to generate (default: 20)
- * @param options.type one of alpha|numeric|alphanum|hex|custom (default: alphanum)
- * @param options.custom if type is custom, provides a set of characters used for the string generation (string or array)
+ * @param options.set one of alpha|numeric|alphanum|hex|custom (default: alphanum)
+ * @param options.custom if set is custom, provides a set of characters used for the string generation (string or array)
  * @returns a string containing random characters from the selected set of the given length
- * @discussion when generating a string of hexadecimal type, the alpha-characters are uppercase, use .toLowerCase() on the result to switch to lowercase
+ * @discussion when generating a string of hexadecimal set, the alpha-characters are uppercase, use .toLowerCase() on the result to switch to lowercase
  */
 randomString = function(options)
 {
@@ -51,11 +51,11 @@ randomString = function(options)
 		options = {}
 	if (options.length === undefined || options.length === null)
 		options.length = 20
-	if (options.type === undefined || options.type === null)
-		options.type = "alphanum"
+	if (options.set === undefined || options.set === null)
+		options.set = "alphanum"
 
 	var charset
-	switch (options.type)
+	switch (options.set)
 	{
 		case "alpha":
 			charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"

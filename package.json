@@ -4,5 +4,10 @@
   "keywords": ["random", "string", "generation", "randomizer", "utils"],
   "author": "Aurelien Bidon <bidon.aurelien@gmail.com> (http://cv.orelbe.com)",
   "version": "0.1.0",
-  "main": "random.js"
+  "main": "random.js",
+  "repository" : {
+      "type" : "git",
+      "url" : "https://github.com/abidon/random.js.git"
+  },
+  "homepage": "https://github.com/abidon/random.js"
 }
