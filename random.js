@@ -13,8 +13,13 @@ randomInt = function(options)
 		options.min = 0
 	if (options.max === undefined || options === null)
 		options.max = 4294967295
+	if (options.min > options.max) {
+		var tmp = options.min
+		options.min = options.max
+		options.max = tmp
+	}
 
-	return Math.floor((Math.random() * options.max) - options.min)
+	return Math.floor((Math.random() * (options.max - options.min)) + options.min)
 }
 
 /*!
@@ -33,7 +38,7 @@ randomFloat = function(options)
 	if (options.max === undefined || options === null)
 		options.max = 1.0
 
-	return (Math.random() * options.max) - options.min
+	return (Math.random() * (options.max - options.min)) + options.min
 }
 
 /*!
@@ -74,7 +79,7 @@ randomString = function(options)
 			break
 
 		case "custom":
-			if (option.custom === undefined || options.custom === null) {
+			if (options.custom === undefined || options.custom === null) {
 				console.error("can't generate a random string with custom set of characters if options.custom is null or undefined")
 				return ""
 			}
@@ -84,7 +89,7 @@ randomString = function(options)
 
 	var result = ""
 	for (var i = 0; i < options.length; i++) {
-		var int = randomInt({min: 0, max: charset.length-1})
+		var int = randomInt({min: 0, max: charset.length})
 		result += charset[int]
 	}
 	return result
