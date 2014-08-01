@@ -1,0 +1,8 @@
+{
+  "name": "random.js",
+  "description": "random numbers and string generation",
+  "keywords": ["random", "string", "generation", "randomizer", "utils"],
+  "author": "Aurelien Bidon <bidon.aurelien@gmail.com> (http://cv.orelbe.com)",
+  "version": "0.1.0",
+  "main": "random.js"
+}
