@@ -3,6 +3,8 @@ random.js
 
 javascript random numbers and string generation library
 
+![Documentation coverage — provided by inch-ci.org](http://inch-ci.org/github/abidon/random.js.svg?branch=master)
+
 ### usage:
 
 use it from your html page:
